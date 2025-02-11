@@ -1,0 +1,10 @@
+Client ID : 1
+Client name : Mohamed
+Client password : 98655599
+Client balance : 4100
+******************
+ Employee ID : 45
+Employee name : hasan
+Employee password : 989898989
+Employee salary : 7000
+******************

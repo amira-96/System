@@ -1,0 +1,5 @@
+Client ID : 1
+Client name : Mohamed
+Client password : 98655599
+Client balance : 4100
+******************
