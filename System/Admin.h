@@ -9,6 +9,7 @@ using namespace std;
 class Admin :public Employee {
 public:
 	double salary;
+	vector<Employee>employees;
 public:
 	Admin() :Employee() {
 
@@ -16,26 +17,26 @@ public:
 	Admin(int id, string name, string password, double salary) :Employee(id, name, password, salary) {
 
 	}
+	
+	void addEmployee(Employee&employee) {
+		employees.push_back(employee);
+	}
 
-
-
-	/*void saveToFile() {
-		ofstream Admin("Admin.txt");
-			if (Admin.is_open()) {
-				Admin << " AdminID : " << id << endl;
-
-				Admin << " Adminname : " << name << endl;
-				Admin << " Admin password : " << password << endl;
-				Admin << " Admin balance : " << salary << endl;
-				Admin << "******************" << endl;
-				Admin.close();
+	Employee* searchEmployee(int id) {
+		for (auto& employee : employees) {
+			if (employee.id == id) {
+				return&employee;
 			}
-		
-		else {
-			cout << "unable to open file to save " << endl;
-
-		}*/
-
+		}
+		return nullptr;
+	}
+	void editEmployee(int id, string name, string password, double salary) {
+		Employee* employee = searchEmployee(id);
+		if (employee) {
+			employee->name = name;
+			employee->getPassword = password;
+		}
+	}
 	
 };
 
