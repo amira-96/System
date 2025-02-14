@@ -76,32 +76,7 @@ class Client :public Person {
 
 		}
 	
-		void saveToFile(std::ofstream& file) {
-			file << "Client ID : " << id << endl;
-			file << "Client name : " << name << endl;
-			file << "Client password : " << password << endl;
-			file << "Client balance : " << balance << endl;
-			file << "******************" << endl;
-		}
-
-		static Client lodefromfile(const string& filename, int clientId) {
-			fstream infile(filename);
-			if (!infile) {
-				cerr << "Erorr opening file" << endl;
-				return Client();
-			}
-			int id;
-			string name, password;
-			double balance;
-			while (infile >> id >> name >> password >> balance) {
-				if (id == clientId) {
-					infile.close();
-					return Client(id, name, password, balance);
-				}
-			}
-			infile.close();
-			return Client();
-		}
+	
 		void displayInfo() {
 			Person::displayInfo();
 

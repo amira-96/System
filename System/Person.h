@@ -6,7 +6,7 @@
 using namespace std;
 class Person
 {
-protected:
+private:
 	int id;
 	string name, password;
 
@@ -23,15 +23,15 @@ public:
 
 	}
 	//setters:
-	void setId(int id) {
+	void setId(int newid) {
 
-		this->id = id;
+		this->id = newid;
 
 	}
 
-	void setName(string name) {
+	void setName(string newname) {
 		if (Validation::validateName(name))
-			this->name = name;
+			this->name = newname;
 		else
 			cout << "Invalid name " << endl;
 	}
@@ -45,10 +45,10 @@ public:
 	}
 
 	//getters:
-	int getId() {
+	int getId()const {
 		return this->id;
 	}
-	string getName() {
+	string getName() const{
 		return this->name;
 
 	}

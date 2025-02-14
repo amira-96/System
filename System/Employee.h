@@ -25,20 +25,13 @@ public:
 			cout << "Invalid salary" << endl;
 	}
 	//getter
-	double geySalary() {
+	double getSalary() {
 		return this->salary;
 	}
 	void displayInfo() {
 		Person::displayInfo();
 		cout << "Employee Salary : " << salary << endl;
 		cout << "******************" << endl;
-	}
-	void saveToFile(std::ofstream& file) {
-		file << " Employee ID : " << id << endl;
-		file << "Employee name : " << name << endl;
-		file << "Employee password : " << password << endl;
-		file << "Employee salary : " << salary << endl;
-		file << "******************" << endl;
 	}
 
 	~Employee() {
